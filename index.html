@@ -495,6 +495,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OpWu">
+      <meta itemprop="description" content="人在家中坐，锅从天上来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="背锅侠">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/" class="post-title-link" itemprop="url">vsftpd主、被动模式区别及iptables配置规则</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-11-05 10:13:00" itemprop="dateCreated datePublished" datetime="2015-11-05T10:13:00+08:00">2015-11-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-27 21:53:45" itemprop="dateModified" datetime="2019-04-27T21:53:45+08:00">2019-04-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="主动与被动模式区别"><a href="#主动与被动模式区别" class="headerlink" title="主动与被动模式区别"></a><strong>主动与被动模式区别</strong></h2><p>FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。</p>
+<h2 id="主动与被动模式iptables的配置"><a href="#主动与被动模式iptables的配置" class="headerlink" title="主动与被动模式iptables的配置"></a><strong>主动与被动模式iptables的配置</strong></h2><p><strong>主动模式下：</strong></p>
+<p>客户端连接 TCP/21，服务器通过 TCP/20 连接客户端的随机端口―这种情况下，通过状态防火墙可以解决  </p>
+<p><code>iptables -A INPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT</code></p>
+<p>或者如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp  -m multiport --dport 20,21  -m state --state NEW -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p><strong>被动模式下：</strong></p>
+<p>客户端连接 TCP/21，客户再通过其他端口连接服务器的随机端口，如果传送卡住，是因为服务器在被动模式下没有打开临时端口让客户端连过来。 </p>
+<p>在/etc/vsftpd/vsftpd.conf中添加 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pasv_enable=YES </span><br><span class="line">pasv_min_port=2222 </span><br><span class="line">pasv_max_port=2225</span><br></pre></td></tr></table></figure>
+<p>iptables中开放这段端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 21 -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp --dport 2222:2225 -j ACCEPT</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/04/vsftpd配置说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -723,7 +888,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -740,7 +905,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
