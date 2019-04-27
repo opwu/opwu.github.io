@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F04%2F12%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[vsftpd主、被动模式区别及iptables配置规则]]></title>
     <url>%2F2015%2F11%2F05%2Fvsftpd%E4%B8%BB%E3%80%81%E8%A2%AB%E5%8A%A8%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB%E5%8F%8Aiptables%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的配置主动模式下： 客户端连接 TCP/21，服务器通过 TCP/20 连接客户端的随机端口―这种情况下，通过状态防火墙可以解决 iptables -A INPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT 或者如下： 12iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT iptables -A INPUT -p tcp -m multiport --dport 20,21 -m state --state NEW -j ACCEPT 被动模式下： 客户端连接 TCP/21，客户再通过其他端口连接服务器的随机端口，如果传送卡住，是因为服务器在被动模式下没有打开临时端口让客户端连过来。 在/etc/vsftpd/vsftpd.conf中添加 123pasv_enable=YES pasv_min_port=2222 pasv_max_port=2225 iptables中开放这段端口 123iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPTiptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 21 -j ACCEPT iptables -A INPUT -p tcp --dport 2222:2225 -j ACCEPT]]></content>
