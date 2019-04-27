@@ -5,4 +5,12 @@
     <url>%2F2019%2F04%2F12%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
+  <entry>
+    <title><![CDATA[vsftpd配置说明]]></title>
+    <url>%2F2015%2F11%2F04%2Fvsftpd%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%2F</url>
+    <content type="text"><![CDATA[vsftpd服务安装完毕后，主要修改一个配置文件/etc/vsftpd/vsftpd.conf，就可以简单实现ftp服务。 介绍几个配置项： anonymous_enable=YES/NO （YES） 控制是否允许匿名用户登入，YES 为允许匿名登入，NO 为不允许。默认值为YES。 write_enable=YES/NO （YES） 是否允许登陆用户有写权限。属于全局设置，默认值为YES。 local_enable=YES/NO （YES） 控制是否允许本地用户登入，YES 为允许本地用户登入，NO为不允许。默认值为YES。 local_root=/home/username 当本地用户登入时，将被更换到定义的目录下。默认值为各用户的家目录。 write_enable=YES/NO （YES） 是否允许登陆用户有写权限。属于全局设置，默认值为YES。 FTP有两种工作方式：PORT FTP（主动模式）和PASV FTP（被动模式） listen_port=21 设置FTP服务器建立连接所监听的端口，默认值为21。 connect_from_port_20=YES/NO 指定FTP使用20端口进行数据传输，默认值为YES。 ftp_data_port=20 设置在PORT方式下，FTP数据连接使用的端口，默认值为20。 pasv_enable=YES/NO （YES） 若设置为YES，则使用PASV工作模式；若设置为NO，则使用PORT模式。默认值为YES，即使用PASV工作模式。 pasv_max_port=0 在PASV工作模式下，数据连接可以使用的端口范围的最大端口，0 表示任意端口。默认值为0。 pasv_min_port=0 在PASV工作模式下，数据连接可以使用的端口范围的最小端口，0 表示任意端口。默认值为0。]]></content>
+      <tags>
+        <tag>ftp</tag>
+      </tags>
+  </entry>
 </search>

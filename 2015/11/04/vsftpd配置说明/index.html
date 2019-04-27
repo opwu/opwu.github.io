@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="人在家中坐，锅从天上来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="背锅侠">
-<meta property="og:url" content="http://www.opswu.com/archives/index.html">
+  <meta name="description" content="vsftpd服务安装完毕后，主要修改一个配置文件/etc/vsftpd/vsftpd.conf，就可以简单实现ftp服务。  介绍几个配置项：  anonymous_enable=YES/NO （YES）  控制是否允许匿名用户登入，YES 为允许匿名登入，NO 为不允许。默认值为YES。  write_enable=YES/NO （YES）  是否允许登陆用户有写权限。属于全局设置，默认值为YE">
+<meta name="keywords" content="ftp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vsftpd配置说明">
+<meta property="og:url" content="http://www.opswu.com/2015/11/04/vsftpd配置说明/index.html">
 <meta property="og:site_name" content="背锅侠">
-<meta property="og:description" content="人在家中坐，锅从天上来">
+<meta property="og:description" content="vsftpd服务安装完毕后，主要修改一个配置文件/etc/vsftpd/vsftpd.conf，就可以简单实现ftp服务。  介绍几个配置项：  anonymous_enable=YES/NO （YES）  控制是否允许匿名用户登入，YES 为允许匿名登入，NO 为不允许。默认值为YES。  write_enable=YES/NO （YES）  是否允许登陆用户有写权限。属于全局设置，默认值为YE">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-27T13:38:40.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="背锅侠">
-<meta name="twitter:description" content="人在家中坐，锅从天上来">
+<meta name="twitter:title" content="vsftpd配置说明">
+<meta name="twitter:description" content="vsftpd服务安装完毕后，主要修改一个配置文件/etc/vsftpd/vsftpd.conf，就可以简单实现ftp服务。  介绍几个配置项：  anonymous_enable=YES/NO （YES）  控制是否允许匿名用户登入，YES 为允许匿名登入，NO 为不允许。默认值为YES。  write_enable=YES/NO （YES）  是否允许登陆用户有写权限。属于全局设置，默认值为YE">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://www.opswu.com/archives/">
+  <link rel="canonical" href="http://www.opswu.com/2015/11/04/vsftpd配置说明/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>归档 | 背锅侠</title>
+  <title>vsftpd配置说明 | 背锅侠</title>
   
 
 
@@ -181,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,7 +242,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -269,19 +271,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -328,118 +317,239 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 2 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/04/vsftpd配置说明/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OpWu">
+      <meta itemprop="description" content="人在家中坐，锅从天上来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="背锅侠">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/12/hello-world/" itemprop="url">
+        
+          <h1 class="post-title" itemprop="name headline">vsftpd配置说明
+
+              
             
-              <span itemprop="name">Hello World</span>
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
             
-          </a>
-        
-      </h2>
+            
+            
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-12T10:28:29+08:00" content="2019-04-12">
-          04-12
-        </time>
-      </div>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
-    </header>
-  </article>
+              
+                
+              
 
+              <time title="创建时间：2015-11-04 15:53:24" itemprop="dateCreated datePublished" datetime="2015-11-04T15:53:24+08:00">2015-11-04</time>
+            
 
+            
+              
 
-      
+              
+                
+                <span class="post-meta-divider">|</span>
+                
 
-        
-        
-        
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-27 21:38:40" itemprop="dateModified" datetime="2019-04-27T21:38:40+08:00">2019-04-27</time>
+              
+            
+          </span>
 
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2015">2015</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/04/vsftpd配置说明/" itemprop="url">
+          
             
-              <span itemprop="name">vsftpd配置说明</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-04T15:53:24+08:00" content="2015-11-04">
-          11-04
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>vsftpd服务安装完毕后，主要修改一个配置文件/etc/vsftpd/vsftpd.conf，就可以简单实现ftp服务。 </p>
+<p>介绍几个配置项：</p>
+<blockquote>
+<p><strong>anonymous_enable=YES/NO</strong> <strong>（YES）</strong></p>
+</blockquote>
+<p>控制是否允许匿名用户登入，YES 为允许匿名登入，NO 为不允许。默认值为YES。</p>
+<blockquote>
+<p><strong>write_enable=YES/NO</strong> <strong>（YES）</strong></p>
+</blockquote>
+<p>是否允许登陆用户有写权限。属于全局设置，默认值为YES。</p>
+<blockquote>
+<p><strong>local_enable=YES/NO</strong> <strong>（YES）</strong></p>
+</blockquote>
+<p>控制是否允许本地用户登入，YES 为允许本地用户登入，NO为不允许。默认值为YES。</p>
+<blockquote>
+<p><strong>local_root=/home/username</strong></p>
+</blockquote>
+<p>当本地用户登入时，将被更换到定义的目录下。默认值为各用户的家目录。</p>
+<blockquote>
+<p><strong>write_enable=YES/NO</strong> <strong>（YES）</strong></p>
+</blockquote>
+<p>是否允许登陆用户有写权限。属于全局设置，默认值为YES。</p>
+<p>FTP有两种工作方式：PORT FTP（主动模式）和PASV FTP（被动模式）</p>
+<blockquote>
+<p><strong>listen_port=21</strong></p>
+</blockquote>
+<p>设置FTP服务器建立连接所监听的端口，默认值为21。</p>
+<blockquote>
+<p><strong>connect_from_port_20=YES/NO</strong></p>
+</blockquote>
+<p>指定FTP使用20端口进行数据传输，默认值为YES。</p>
+<blockquote>
+<p><strong>ftp_data_port=20</strong></p>
+</blockquote>
+<p>设置在PORT方式下，FTP数据连接使用的端口，默认值为20。</p>
+<blockquote>
+<p><strong>pasv_enable=YES/NO</strong> <strong>（YES）</strong></p>
+</blockquote>
+<p>若设置为YES，则使用PASV工作模式；若设置为NO，则使用PORT模式。默认值为YES，即使用PASV工作模式。</p>
+<blockquote>
+<p><strong>pasv_max_port=0</strong></p>
+</blockquote>
+<p>在PASV工作模式下，数据连接可以使用的端口范围的最大端口，0 表示任意端口。默认值为0。</p>
+<blockquote>
+<p><strong>pasv_min_port=0</strong></p>
+</blockquote>
+<p>在PASV工作模式下，数据连接可以使用的端口范围的最小端口，0 表示任意端口。默认值为0。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ftp/" rel="tag"># ftp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/12/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -676,6 +786,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -691,6 +805,8 @@
 
   
 
+
+  
 
 
   
