@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
-<meta name="keywords" content="ftp,iptables">
+  <meta name="description" content="mbstring 处理多字节字符集转换时比较常用  执行 yum install php-mbstring 修改php.ini echo &amp;#39;extension=mbstring.so&amp;#39; &amp;gt;&amp;gt;/etc/php.ini #根据php安装目录而定  重启web service，如果是apache: service httpd restart">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vsftpd主、被动模式区别及iptables配置规则">
-<meta property="og:url" content="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/index.html">
+<meta property="og:title" content="PHP如何打开mb_string">
+<meta property="og:url" content="http://www.opswu.com/2015/11/06/centos环境下php开启mb-string/index.html">
 <meta property="og:site_name" content="背锅侠">
-<meta property="og:description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
+<meta property="og:description" content="mbstring 处理多字节字符集转换时比较常用  执行 yum install php-mbstring 修改php.ini echo &amp;#39;extension=mbstring.so&amp;#39; &amp;gt;&amp;gt;/etc/php.ini #根据php安装目录而定  重启web service，如果是apache: service httpd restart">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T13:53:45.929Z">
+<meta property="og:updated_time" content="2019-05-12T04:25:35.141Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vsftpd主、被动模式区别及iptables配置规则">
-<meta name="twitter:description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
+<meta name="twitter:title" content="PHP如何打开mb_string">
+<meta name="twitter:description" content="mbstring 处理多字节字符集转换时比较常用  执行 yum install php-mbstring 修改php.ini echo &amp;#39;extension=mbstring.so&amp;#39; &amp;gt;&amp;gt;/etc/php.ini #根据php安装目录而定  重启web service，如果是apache: service httpd restart">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/">
+  <link rel="canonical" href="http://www.opswu.com/2015/11/06/centos环境下php开启mb-string/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>vsftpd主、被动模式区别及iptables配置规则 | 背锅侠</title>
+  <title>PHP如何打开mb_string | 背锅侠</title>
   
 
 
@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/">
+    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/06/centos环境下php开启mb-string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OpWu">
@@ -350,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vsftpd主、被动模式区别及iptables配置规则
+          <h1 class="post-title" itemprop="name headline">PHP如何打开mb_string
 
               
             
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2015-11-05 10:13:00" itemprop="dateCreated datePublished" datetime="2015-11-05T10:13:00+08:00">2015-11-05</time>
+              <time title="创建时间：2015-11-06 16:01:34" itemprop="dateCreated datePublished" datetime="2015-11-06T16:01:34+08:00">2015-11-06</time>
             
 
             
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-27 21:53:45" itemprop="dateModified" datetime="2019-04-27T21:53:45+08:00">2019-04-27</time>
+                <time title="修改时间：2019-05-12 12:25:35" itemprop="dateModified" datetime="2019-05-12T12:25:35+08:00">2019-05-12</time>
               
             
           </span>
@@ -434,18 +434,17 @@
       
 
       
-        <h2 id="主动与被动模式区别"><a href="#主动与被动模式区别" class="headerlink" title="主动与被动模式区别"></a><strong>主动与被动模式区别</strong></h2><p>FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。</p>
-<h2 id="主动与被动模式iptables的配置"><a href="#主动与被动模式iptables的配置" class="headerlink" title="主动与被动模式iptables的配置"></a><strong>主动与被动模式iptables的配置</strong></h2><p><strong>主动模式下：</strong></p>
-<p>客户端连接 TCP/21，服务器通过 TCP/20 连接客户端的随机端口―这种情况下，通过状态防火墙可以解决  </p>
-<p><code>iptables -A INPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT</code></p>
-<p>或者如下： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp  -m multiport --dport 20,21  -m state --state NEW -j ACCEPT</span><br></pre></td></tr></table></figure>
-<p><strong>被动模式下：</strong></p>
-<p>客户端连接 TCP/21，客户再通过其他端口连接服务器的随机端口，如果传送卡住，是因为服务器在被动模式下没有打开临时端口让客户端连过来。 </p>
-<p>在/etc/vsftpd/vsftpd.conf中添加 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pasv_enable=YES </span><br><span class="line">pasv_min_port=2222 </span><br><span class="line">pasv_max_port=2225</span><br></pre></td></tr></table></figure>
-<p>iptables中开放这段端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 21 -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp --dport 2222:2225 -j ACCEPT</span><br></pre></td></tr></table></figure>
+        <p>mbstring 处理多字节字符集转换时比较常用</p>
+<ol>
+<li>执行 <code>yum install php-mbstring</code></li>
+<li><p>修改php.ini</p>
+<p><code>echo &#39;extension=mbstring.so&#39; &gt;&gt;/etc/php.ini #根据php安装目录而定</code></p>
+</li>
+<li><p>重启web service，如果是apache:</p>
+<p><code>service httpd restart</code></p>
+</li>
+</ol>
+
       
     </div>
 
@@ -468,9 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ftp/" rel="tag"># ftp</a>
-          
-            <a href="/tags/iptables/" rel="tag"># iptables</a>
+            <a href="/tags/php/" rel="tag"># php</a>
           
         </div>
       
@@ -483,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/04/vsftpd配置说明/" rel="next" title="vsftpd配置说明">
-                <i class="fa fa-chevron-left"></i> vsftpd配置说明
+              <a href="/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/" rel="next" title="vsftpd主、被动模式区别及iptables配置规则">
+                <i class="fa fa-chevron-left"></i> vsftpd主、被动模式区别及iptables配置规则
               </a>
             
           </div>
@@ -493,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/06/centos环境下php开启mb-string/" rel="prev" title="PHP如何打开mb_string">
-                PHP如何打开mb_string <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/06/一台服务器启动多个mysql实例/" rel="prev" title="一台服务器启动多个mysql实例">
+                一台服务器启动多个mysql实例 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,17 +536,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -618,23 +606,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主动与被动模式区别"><span class="nav-number">1.</span> <span class="nav-text">主动与被动模式区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主动与被动模式iptables的配置"><span class="nav-number">2.</span> <span class="nav-text">主动与被动模式iptables的配置</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
