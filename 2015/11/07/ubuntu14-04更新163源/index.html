@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
-<meta name="keywords" content="ftp,iptables">
+  <meta name="description" content="备份配置文件1root@server:~# cp /etc/apt/sources.list /etc/apt/sources.list.bak 添加163源1234567891011root@server:~# vim /etc/apt/sources.list deb http://mirrors.163.com/ubuntu/ trusty main restricted universe">
+<meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vsftpd主、被动模式区别及iptables配置规则">
-<meta property="og:url" content="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/index.html">
+<meta property="og:title" content="Ubuntu14.04更新163源">
+<meta property="og:url" content="http://www.opswu.com/2015/11/07/ubuntu14-04更新163源/index.html">
 <meta property="og:site_name" content="背锅侠">
-<meta property="og:description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
+<meta property="og:description" content="备份配置文件1root@server:~# cp /etc/apt/sources.list /etc/apt/sources.list.bak 添加163源1234567891011root@server:~# vim /etc/apt/sources.list deb http://mirrors.163.com/ubuntu/ trusty main restricted universe">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T13:53:45.929Z">
+<meta property="og:updated_time" content="2019-05-12T04:41:18.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vsftpd主、被动模式区别及iptables配置规则">
-<meta name="twitter:description" content="主动与被动模式区别FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。 主动与被动模式iptables的">
+<meta name="twitter:title" content="Ubuntu14.04更新163源">
+<meta name="twitter:description" content="备份配置文件1root@server:~# cp /etc/apt/sources.list /etc/apt/sources.list.bak 添加163源1234567891011root@server:~# vim /etc/apt/sources.list deb http://mirrors.163.com/ubuntu/ trusty main restricted universe">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/">
+  <link rel="canonical" href="http://www.opswu.com/2015/11/07/ubuntu14-04更新163源/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>vsftpd主、被动模式区别及iptables配置规则 | 背锅侠</title>
+  <title>Ubuntu14.04更新163源 | 背锅侠</title>
   
 
 
@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/">
+    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/07/ubuntu14-04更新163源/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="OpWu">
@@ -350,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vsftpd主、被动模式区别及iptables配置规则
+          <h1 class="post-title" itemprop="name headline">Ubuntu14.04更新163源
 
               
             
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2015-11-05 10:13:00" itemprop="dateCreated datePublished" datetime="2015-11-05T10:13:00+08:00">2015-11-05</time>
+              <time title="创建时间：2015-11-07 20:55:00" itemprop="dateCreated datePublished" datetime="2015-11-07T20:55:00+08:00">2015-11-07</time>
             
 
             
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-27 21:53:45" itemprop="dateModified" datetime="2019-04-27T21:53:45+08:00">2019-04-27</time>
+                <time title="修改时间：2019-05-12 12:41:18" itemprop="dateModified" datetime="2019-05-12T12:41:18+08:00">2019-05-12</time>
               
             
           </span>
@@ -434,18 +434,9 @@
       
 
       
-        <h2 id="主动与被动模式区别"><a href="#主动与被动模式区别" class="headerlink" title="主动与被动模式区别"></a><strong>主动与被动模式区别</strong></h2><p>FTP的数据连接和控制连接的方向一般是相反的，即服务器向客户端发起一个用于数据传输的连接。连接的端口是由服务器端和客户端协商确定的，这就是vsftpd的主动模式（port mod）。FTP协议的这个特征对iptables防火墙和NAT的配置增加了很多困难。在FTP被动模式 (passive mod)下，数据连接是由客户程序发起的，和主动模式相反。</p>
-<h2 id="主动与被动模式iptables的配置"><a href="#主动与被动模式iptables的配置" class="headerlink" title="主动与被动模式iptables的配置"></a><strong>主动与被动模式iptables的配置</strong></h2><p><strong>主动模式下：</strong></p>
-<p>客户端连接 TCP/21，服务器通过 TCP/20 连接客户端的随机端口―这种情况下，通过状态防火墙可以解决  </p>
-<p><code>iptables -A INPUT -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT</code></p>
-<p>或者如下： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp  -m multiport --dport 20,21  -m state --state NEW -j ACCEPT</span><br></pre></td></tr></table></figure>
-<p><strong>被动模式下：</strong></p>
-<p>客户端连接 TCP/21，客户再通过其他端口连接服务器的随机端口，如果传送卡住，是因为服务器在被动模式下没有打开临时端口让客户端连过来。 </p>
-<p>在/etc/vsftpd/vsftpd.conf中添加 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pasv_enable=YES </span><br><span class="line">pasv_min_port=2222 </span><br><span class="line">pasv_max_port=2225</span><br></pre></td></tr></table></figure>
-<p>iptables中开放这段端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 21 -j ACCEPT </span><br><span class="line">iptables -A INPUT -p tcp --dport 2222:2225 -j ACCEPT</span><br></pre></td></tr></table></figure>
+        <h3 id="备份配置文件"><a href="#备份配置文件" class="headerlink" title="备份配置文件"></a><strong>备份配置文件</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@server:~# cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure>
+<h3 id="添加163源"><a href="#添加163源" class="headerlink" title="添加163源"></a><strong>添加163源</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@server:~# vim /etc/apt/sources.list </span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse </span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse </span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse </span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse </span><br><span class="line">deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse </span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@server:~# apt-get update</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -468,9 +459,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ftp/" rel="tag"># ftp</a>
-          
-            <a href="/tags/iptables/" rel="tag"># iptables</a>
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
           
         </div>
       
@@ -483,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/04/vsftpd配置说明/" rel="next" title="vsftpd配置说明">
-                <i class="fa fa-chevron-left"></i> vsftpd配置说明
+              <a href="/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/" rel="next" title="彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题">
+                <i class="fa fa-chevron-left"></i> 彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题
               </a>
             
           </div>
@@ -493,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/06/centos环境下php开启mb-string/" rel="prev" title="PHP如何打开mb_string">
-                PHP如何打开mb_string <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/07/linux及windows安装zabbixagent端自动化脚本/" rel="prev" title="Linux及Windows安装ZabbixAgent自动化脚本">
+                Linux及Windows安装ZabbixAgent自动化脚本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主动与被动模式区别"><span class="nav-number">1.</span> <span class="nav-text">主动与被动模式区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主动与被动模式iptables的配置"><span class="nav-number">2.</span> <span class="nav-text">主动与被动模式iptables的配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#备份配置文件"><span class="nav-number">1.</span> <span class="nav-text">备份配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加163源"><span class="nav-number">2.</span> <span class="nav-text">添加163源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li></ol></div>
             
 
           </div>
