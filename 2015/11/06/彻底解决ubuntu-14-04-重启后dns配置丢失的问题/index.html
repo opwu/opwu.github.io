@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="##方法1： 12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 ##方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvcon">
+  <meta name="description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
 <meta name="keywords" content="dns,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题">
 <meta property="og:url" content="http://www.opswu.com/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/index.html">
 <meta property="og:site_name" content="背锅侠">
-<meta property="og:description" content="##方法1： 12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 ##方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvcon">
+<meta property="og:description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T04:28:50.598Z">
+<meta property="og:updated_time" content="2019-05-12T04:33:07.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题">
-<meta name="twitter:description" content="##方法1： 12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 ##方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvcon">
+<meta name="twitter:description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
 
 
 
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-12 12:28:50" itemprop="dateModified" datetime="2019-05-12T12:28:50+08:00">2019-05-12</time>
+                <time title="修改时间：2019-05-12 12:33:07" itemprop="dateModified" datetime="2019-05-12T12:33:07+08:00">2019-05-12</time>
               
             
           </span>
@@ -434,9 +434,8 @@
       
 
       
-        <p>##<strong>方法1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/network/interfaces</span><br><span class="line">dns-nameservers 8.8.8.8</span><br></pre></td></tr></table></figure>
-<p>##<strong>方法2：（这个文件默认是空的）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/resolvconf/resolv.conf.d/base</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure></p>
+        <h2 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a><strong>方法1：</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/network/interfaces</span><br><span class="line">dns-nameservers 8.8.8.8</span><br></pre></td></tr></table></figure>
+<h2 id="方法2：（这个文件默认是空的）"><a href="#方法2：（这个文件默认是空的）" class="headerlink" title="方法2：（这个文件默认是空的）"></a><strong>方法2：（这个文件默认是空的）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/resolvconf/resolv.conf.d/base</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure>
 <p>如果有多个DNS就一行一个<br>修改好保存，然后执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resolvconf -u</span><br><span class="line">sudo vim /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure>
 <p>打开里面显示如下<br>再看/etc/resolv.conf，最下面就多了2行：</p>
@@ -532,8 +531,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -602,6 +610,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法1："><span class="nav-number">1.</span> <span class="nav-text">方法1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法2：（这个文件默认是空的）"><span class="nav-number">2.</span> <span class="nav-text">方法2：（这个文件默认是空的）</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
