@@ -31,8 +31,6 @@
 
 
 
-<script data-ad-client="ca-pub-9473556030788842" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 
 
 
@@ -98,16 +96,18 @@
 
 
 
-  <meta name="description" content="人在家中坐，锅从天上来">
-<meta property="og:type" content="website">
-<meta property="og:title" content="背锅侠">
-<meta property="og:url" content="http://www.opswu.com/archives/2015/index.html">
+  <meta name="description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
+<meta name="keywords" content="ubuntu,dns">
+<meta property="og:type" content="article">
+<meta property="og:title" content="彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题">
+<meta property="og:url" content="http://www.opswu.com/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/index.html">
 <meta property="og:site_name" content="背锅侠">
-<meta property="og:description" content="人在家中坐，锅从天上来">
+<meta property="og:description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-12T04:33:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="背锅侠">
-<meta name="twitter:description" content="人在家中坐，锅从天上来">
+<meta name="twitter:title" content="彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题">
+<meta name="twitter:description" content="方法1：12sudo vim /etc/network/interfacesdns-nameservers 8.8.8.8 方法2：（这个文件默认是空的）123sudo vim /etc/resolvconf/resolv.conf.d/basenameserver 8.8.8.8nameserver 8.8.4.4 如果有多个DNS就一行一个修改好保存，然后执行 12resolvconf -us">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://www.opswu.com/archives/2015/">
+  <link rel="canonical" href="http://www.opswu.com/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>归档 | 背锅侠</title>
+  <title>彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题 | 背锅侠</title>
   
 
 
@@ -183,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,7 +242,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -271,19 +271,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -330,288 +317,205 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.opswu.com/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OpWu">
+      <meta itemprop="description" content="人在家中坐，锅从天上来">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="背锅侠">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-11-06 16:08:49" itemprop="dateCreated datePublished" datetime="2015-11-06T16:08:49+08:00">2015-11-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-12 12:33:07" itemprop="dateModified" datetime="2019-05-12T12:33:07+08:00">2019-05-12</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-      
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2015">2015</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/07/linux及windows安装zabbixagent端自动化脚本/" itemprop="url">
             
-              <span itemprop="name">Linux及Windows安装ZabbixAgent自动化脚本</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-07T22:04:56+08:00" content="2015-11-07">
-          11-07
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/07/ubuntu14-04更新163源/" itemprop="url">
-            
-              <span itemprop="name">Ubuntu14.04更新163源</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-07T20:55:00+08:00" content="2015-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/06/彻底解决ubuntu-14-04-重启后dns配置丢失的问题/" itemprop="url">
-            
-              <span itemprop="name">彻底解决Ubuntu 14.04 重启后DNS配置丢失的问题</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-06T16:08:49+08:00" content="2015-11-06">
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a><strong>方法1：</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/network/interfaces</span><br><span class="line">dns-nameservers 8.8.8.8</span><br></pre></td></tr></table></figure>
+<h2 id="方法2：（这个文件默认是空的）"><a href="#方法2：（这个文件默认是空的）" class="headerlink" title="方法2：（这个文件默认是空的）"></a><strong>方法2：（这个文件默认是空的）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/resolvconf/resolv.conf.d/base</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure>
+<p>如果有多个DNS就一行一个<br>修改好保存，然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resolvconf -u</span><br><span class="line">sudo vim /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure>
+<p>打开里面显示如下<br>再看/etc/resolv.conf，最下面就多了2行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/resolv.conf</span><br><span class="line"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)</span><br><span class="line"># DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure>
+<p>现在此DNS已经生效了，无需重启，当然重启也不会丢失</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/06/一台服务器启动多个mysql实例/" itemprop="url">
-            
-              <span itemprop="name">一台服务器启动多个mysql实例</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-06T16:03:11+08:00" content="2015-11-06">
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/06/centos环境下php开启mb-string/" itemprop="url">
-            
-              <span itemprop="name">PHP如何打开mb_string</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-06T16:01:34+08:00" content="2015-11-06">
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/05/vsftpd主、被动模式区别及iptables配置方法/" itemprop="url">
-            
-              <span itemprop="name">vsftpd主、被动模式区别及iptables配置规则</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-05T10:13:00+08:00" content="2015-11-05">
-          11-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2015/11/04/vsftpd配置说明/" itemprop="url">
-            
-              <span itemprop="name">vsftpd配置说明</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-11-04T15:53:24+08:00" content="2015-11-04">
-          11-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          
+            <a href="/tags/dns/" rel="tag"># dns</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/06/一台服务器启动多个mysql实例/" rel="next" title="一台服务器启动多个mysql实例">
+                <i class="fa fa-chevron-left"></i> 一台服务器启动多个mysql实例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/07/ubuntu14-04更新163源/" rel="prev" title="Ubuntu14.04更新163源">
+                Ubuntu14.04更新163源 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -631,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -710,6 +623,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法1："><span class="nav-number">1.</span> <span class="nav-text">方法1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法2：（这个文件默认是空的）"><span class="nav-number">2.</span> <span class="nav-text">方法2：（这个文件默认是空的）</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -724,7 +654,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -866,6 +796,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -881,6 +815,8 @@
 
   
 
+
+  
 
 
   
